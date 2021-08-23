@@ -1,17 +1,17 @@
 #json5==0.9.5
 
 
-numpy @ file:///C:/ci/numpy_and_numpy_base_1618497418457/work
+#numpy @ file:///C:/ci/numpy_and_numpy_base_1618497418457/work
 numpy ==1.21.2
 
-pandas @ file:///C:/ci/pandas_1618365634936/work
+#pandas @ file:///C:/ci/pandas_1618365634936/work
 pandas ==1.3.2
 
 
 #pydantic==1.8.2
 
-scikit-image==0.18.1
-scikit-learn @ file:///C:/ci/scikit-learn_1614446896245/work
+#scikit-image==0.18.1
+#scikit-learn @ file:///C:/ci/scikit-learn_1614446896245/work
 #scikit-image==0.18.1
 #scikit-learn @ file:///C:/ci/scikit-learn_1614446896245/work
 sklearn==0.0
