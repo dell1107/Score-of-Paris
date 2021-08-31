@@ -6,10 +6,10 @@ model = Scoring_model()
 seuil_xgb= 0.22
 #Interface
 st.markdown('## Score of Paris')
-Lymphocytes = st.number_input('Lymphocytes')
-Basophiles = st.number_input('Basophiles')
-Neutrophiles = st.number_input('Neutrophiles')
-Eosinophiles = st.number_input('Eosinophiles')
+Lymphocytes = st.number_input('Lymphocytes (G/L)')
+Basophiles = st.number_input('Basophiles (G/L)')
+Neutrophiles = st.number_input('Neutrophiles (G/L)')
+Eosinophiles = st.number_input('Eosinophiles (G/L)')
 Age = st.number_input('Age')
 #print (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)
 def predict (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles):
