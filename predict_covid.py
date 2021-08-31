@@ -4,7 +4,7 @@ import joblib
 from Model import Bio_marqueurs, Scoring_model
 model = Scoring_model()
 seuil_xgb= 0.22
-#Interface
+
 st.markdown('## Score of Paris')
 Lymphocytes = st.number_input('Lymphocytes (G/L)')
 Basophiles = st.number_input('Basophiles (G/L)')
@@ -24,8 +24,10 @@ def predict (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles):
 
 #Predict button
 if st.button('Predict'):
-    #model = joblib.load('iris_model.pkl')
-    #X = np.array([Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles])
-    #st.markdown(predict_covid(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles))
-    st.markdown(f'The prediction of Score of Paris based on the Xgboost model for this patient is : {predict(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)}.')
-    st.markdown(f'The threshold of the xgboost model which gives a sensibility of 90% is equal to 0.22 .')
+    X = np.array([Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles])
+    if any(X <= 0):
+        st.markdown('### Inputs must be greater than 0')
+    else:
+    
+        st.markdown(f'The prediction of Score of Paris based on the Xgboost model for this patient is : {predict(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)}.')
+        st.markdown(f'The threshold of the xgboost model which gives a sensibility of 90% is equal to 0.22 .')
