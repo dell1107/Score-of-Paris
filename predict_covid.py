@@ -15,9 +15,9 @@ Age = st.number_input('Age')
 def predict (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles):
     prediction, probability = model.predict_covid(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)
     if probability [0][1]> seuil_xgb:
-        return ("Positive to Covid19")
+        return ("Positive to Covid19 with a probability equal to "+probability [0][1])
     else:
-        return("Negative to Covid19")
+        return("Negative to Covid19 with a probability equal to "+probability [0][1])
 
 
 
@@ -26,4 +26,6 @@ if st.button('Predict'):
     #model = joblib.load('iris_model.pkl')
     #X = np.array([Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles])
     #st.markdown(predict_covid(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles))
-    st.markdown(f'The prediction of Score of Paris based on the Xgboost model for this patient is : {predict(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)}')
+    st.markdown(f'The prediction of Score of Paris based on the Xgboost model for this patient is : {predict(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)}.
+    \n The threshold of the Xgboost model wich gives a sensibility of 90% is equal to 0.22'
+                ')
