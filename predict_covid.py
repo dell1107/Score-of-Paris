@@ -10,7 +10,7 @@ Lymphocytes = st.number_input('Lymphocytes (G/L)')
 Basophiles = st.number_input('Basophiles (G/L)')
 Neutrophiles = st.number_input('Neutrophiles (G/L)')
 Eosinophiles = st.number_input('Eosinophiles (G/L)')
-Age = st.number_input('Age')
+Age = st.number_input('Age (years)')
 #print (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)
 def predict (Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles):
     prediction, probability = model.predict_covid(Age, Lymphocytes, Basophiles, Neutrophiles,Eosinophiles)
